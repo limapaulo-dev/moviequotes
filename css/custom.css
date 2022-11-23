@@ -1,0 +1,140 @@
+/* body {
+  font-family: 'Silkscreen', cursive;
+} */
+
+img {
+  max-height: 245px;
+}
+
+a {
+  margin: 0;
+  text-decoration: 0;
+}
+
+.quiz-background {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.scrolling-image {
+  background: url('https://s.yimg.com/ny/api/res/1.2/ZzAHlDHi8a2xdBRRbruaYQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTkyOA--/https://media.zenfs.com/en/homerun/feed_manager_auto_publish_494/d05a3f087fa57f6d41b865d53a42a5f5');
+  height: 2000px;
+  width: 20080px;
+  z-index: 1;
+  opacity: 0.2;
+  position: absolute;
+  transform: rotate(25deg);
+  animation: background-thumbnail 30s linear infinite reverse;
+}
+
+/* .animated-bg {
+  height: 100%;
+  animation: slide 5s ease-in infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(245, 245, 245) 50%, rgb(255, 255, 255) 40%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: absolute;
+  right: -50%;
+  top: 0;
+  z-index: 2;
+} */
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 5s;
+}
+
+.bg3 {
+  animation-duration: 5s;
+}
+
+.quiz-container {
+  z-index: 3;
+  overflow-y: auto;
+}
+
+.linear-shine:hover {
+  text-align: center;
+  background: linear-gradient(-90deg, #6c757d 62%, rgb(255, 255, 255) 65%, #6c757d 68%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+.thumbnails-container img {
+  transition: transform 0.8s;
+  animation: thumbnail-flip 3s linear infinite;
+}
+
+.thumbnails-container .thumb1 {
+  animation-play-state: paused;
+}
+
+.thumbnails-container .thumb2 {
+  animation-play-state: paused;
+  animation-delay: 0.4s;
+}
+.thumbnails-container .thumb3 {
+  animation-play-state: paused;
+  animation-delay: 0.8s;
+}
+.thumbnails-container .thumb4 {
+  animation-play-state: paused;
+  animation-delay: 1.2s;
+}
+
+@keyframes shine {
+  0% {
+    background-size: 200% auto;
+  }
+  90% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+@keyframes thumbnail-flip {
+  0% {
+    transform: rotateZ(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateZ(-10deg) rotateY(90deg);
+  }
+}
+
+@keyframes background-thumbnail {
+  0% {
+    transform: rotate(25deg) translate(0);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(25deg) translate(3840px); /* The image width */
+  }
+}
+
+@media (max-width: 960px) {
+  .quiz-container {
+    -ms-overflow-style: visible; /* IE and Edge */
+    scrollbar-width: visible; /* Firefox */
+  }
+
+  .quiz-container::-webkit-scrollbar {
+    display: visible;
+  }
+}
