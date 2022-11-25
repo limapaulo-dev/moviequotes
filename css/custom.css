@@ -69,23 +69,24 @@ a {
 
 .thumbnails-container img {
   transition: transform 0.8s;
-  animation: thumbnail-flip 3s linear infinite;
+  animation-name: thumbnail-flip;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
 }
 
 .thumbnails-container .thumb1 {
-  animation-play-state: paused;
+  animation-delay: 0s;
 }
 
 .thumbnails-container .thumb2 {
-  animation-play-state: paused;
   animation-delay: 0.4s;
 }
 .thumbnails-container .thumb3 {
-  animation-play-state: paused;
   animation-delay: 0.8s;
 }
 .thumbnails-container .thumb4 {
-  animation-play-state: paused;
   animation-delay: 1.2s;
 }
 
@@ -108,10 +109,12 @@ a {
 }
 
 @keyframes thumbnail-flip {
-  0% {
+  0%,
+  70%,
+  100% {
     transform: rotateZ(0deg) rotateY(0deg);
   }
-  100% {
+  85% {
     transform: rotateZ(-10deg) rotateY(90deg);
   }
 }
